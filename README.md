@@ -34,10 +34,10 @@ const lo = listobject({
 ### qixFaker.hypercube(options)
 
 - options `<object>`
-  - dimensions `Array<field>` - Dimensions.
-  - measures `Array<field>` - Measures.
-  - numRows `number` - Number of rows to generate.
-  - seed `number` - Set the same number to generate consistent results.
+  - dimensions `<Array<field>>` - Dimensions.
+  - measures `<Array<field>>` - Measures.
+  - numRows `<number>` - Number of rows to generate.
+  - seed `<number>` - Set the same number to generate consistent results.
 
 ```js
 qixFaker.hypercube({
@@ -55,8 +55,8 @@ qixFaker.hypercube({
 
 - options `<object>`
   - dimension `<field>`.
-  - numRows `number` - Number of rows to generate.
-  - seed `number` - Set the same number to generate consistent results.
+  - numRows `<number>` - Number of rows to generate.
+  - seed `<number>` - Set the same number to generate consistent results.
 
 ```js
 qixFaker.listobject({
@@ -89,6 +89,8 @@ Using an object provides more control:
 
 - value: `<function(faker, rowIndex)>` - Same function as above.
 - maxCardinalRatio `<number>` - A value between `0 - 1` to limit the uniqueness of dimension values.
+- attrDims `<Array<field>>` - Attribute dimensions.
+- attrExps `<Array<field>` - Attribute expression.
 - override `<object>` - Set custom properties on the field.
 
 ```js
@@ -98,6 +100,8 @@ hypercube({
     {
       value: f => f.address.city(),
       maxCardinalRatio: 0.4,
+      attrDim: [f => f.commerce.color()],
+      attrExps: [f => f.random.number()]
       override: {
         qFallbackTitle: 'City',
         qLocked: true,
