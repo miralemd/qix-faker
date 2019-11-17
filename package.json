@@ -1,0 +1,36 @@
+{
+  "name": "qix-faker",
+  "version": "0.1.0",
+  "description": "Generate fake Qlik Engine data in the shape of hypercubes and listobjects.",
+  "author": "miralemd",
+  "license": "MIT",
+  "keywords": [
+    "qlik",
+    "sense",
+    "qix",
+    "enigma"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miralemd/qix-faker.git"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint lib test",
+    "test": "aw node --babel.enable false --src lib/**/*.js"
+  },
+  "dependencies": {
+    "faker": "^4.1.0"
+  },
+  "devDependencies": {
+    "@after-work.js/node-cli": "^6.0.10",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-plugin-mocha": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1"
+  }
+}
