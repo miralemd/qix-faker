@@ -2,7 +2,7 @@
   "name": "qix-faker",
   "version": "0.1.0",
   "description": "Generate fake Qlik Engine data in the shape of hypercubes and listobjects.",
-  "author": "miralemd",
+  "author": "Miralem Drek",
   "license": "MIT",
   "keywords": [
     "qlik",
@@ -15,11 +15,17 @@
     "url": "https://github.com/miralemd/qix-faker.git"
   },
   "main": "lib/index.js",
+  "browser": "dist/qix-faker.umd.js",
+  "unpkg": "dist/qix-faker.umd.js",
+  "jsdelivr": "dist/qix-faker.umd.js",
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
+  "sideEffects": false,
   "scripts": {
     "lint": "eslint lib test",
+    "build": "rm -rf dist && rollup -c rollup.config.js",
     "test": "aw node --babel.enable false --src lib/**/*.js"
   },
   "dependencies": {
@@ -27,10 +33,17 @@
   },
   "devDependencies": {
     "@after-work.js/node-cli": "^6.0.10",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.6.0",
     "eslint-plugin-mocha": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "rollup": "^1.27.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2"
   }
 }
