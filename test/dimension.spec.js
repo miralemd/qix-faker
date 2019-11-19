@@ -89,6 +89,31 @@ describe('dimension', () => {
     expect(values).to.eql(['a-0', 'a-0', 'a-2', 'a-2', 'a-4', 'a-4', 'a-6', 'a-6', 'a-8', 'a-8']);
   });
 
+  it('should improve uniqueness', () => {
+    const numRows = 4;
+    const maxCardinalRatio = 0.5;
+    const value = sinon.stub();
+    value.returns('a');
+    value
+      .withArgs(1)
+      .onCall(9)
+      .returns('b');
+    const d = dimension({
+      maxCardinalRatio,
+      numRows,
+      forceUnique: true,
+      value,
+    });
+
+    const values = [];
+    for (let r = 0; r < numRows; r++) {
+      const v = d.cell(r);
+      values.push(v ? v.qText : v);
+    }
+
+    expect(values).to.eql(['a', 'b', false, false]);
+  });
+
   it('should return info', () => {
     const d = dimension({
       value: idx => `a-${idx}`,

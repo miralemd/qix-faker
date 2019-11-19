@@ -20,7 +20,7 @@ describe('field', () => {
     const [field] = doMock({ dimension, measure });
 
     const faker = 'faker';
-    const f = field({ f: 'a', index: 2, numRows: 13, faker });
+    const f = field({ f: 'a', index: 2, numRows: 13, forceUnique: true, faker });
 
     expect(f).to.equal('dim');
 
@@ -33,6 +33,7 @@ describe('field', () => {
       attrDims: [],
       attrExps: [],
       maxCardinalRatio: 1,
+      forceUnique: true,
       override: {},
     });
   });
@@ -102,6 +103,7 @@ describe('field', () => {
       index: 2,
       numRows: 13,
       isAttr: false,
+      forceUnique: false,
       attrDims: [],
       attrExps: [],
       maxCardinalRatio: 0.7,
@@ -130,6 +132,7 @@ describe('field', () => {
       index: 0,
       numRows: 13,
       isAttr: true,
+      forceUnique: false,
       attrDims: [],
       attrExps: [],
       maxCardinalRatio: 1,

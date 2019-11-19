@@ -48,6 +48,7 @@ describe('qix-faker', () => {
       dimensions: ['d'],
       numRows: 'r',
       seed: 's',
+      forceUnique: true,
     });
 
     expect(hc).to.eql({
