@@ -1,6 +1,6 @@
 {
   "name": "qix-faker",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Generate fake Qlik Engine data in the shape of hypercubes and listobjects.",
   "author": "Miralem Drek",
   "license": "MIT",
