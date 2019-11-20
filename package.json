@@ -26,7 +26,8 @@
   "scripts": {
     "lint": "eslint lib test",
     "build": "rm -rf dist && rollup -c rollup.config.js",
-    "test": "aw node --babel.enable false --src lib/**/*.js"
+    "test": "aw node --babel.enable false --src lib/**/*.js",
+    "prepublishOnly": "yarn run build"
   },
   "dependencies": {
     "faker": "^4.1.0"
