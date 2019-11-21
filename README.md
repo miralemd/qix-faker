@@ -7,6 +7,7 @@ Generate fake Qlik Engine data in the shape of [hypercubes](https://core.qlik.co
 Great for prototyping with [picasso.js](https://picassojs.com), [nebula.js](https://github.com/qlik-oss/nebula.js) and any other time when a real Qlik Engine is not available.
 
 - [Try it out here](https://codesandbox.io/s/qf-d72kk)
+- [point distribution with picasso.js](https://observablehq.com/@miralemd/point-distribution-with-hypercube-data)
 - [mekko chart example with nebula.js, no Qlik engine](https://codesandbox.io/s/friendly-framework-wf4yn)
 
 
